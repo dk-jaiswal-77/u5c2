@@ -1,6 +1,6 @@
 import "./Rentals.css";
 
-export const Rentals = ({house}) => {
+export const Rentals = ({houses}) => {
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
@@ -29,7 +29,7 @@ export const Rentals = ({house}) => {
           </tr>
         </thead>
         <tbody>
-          {[].map((house, index) => {
+          {houses.map((house, index) => {
             return (
               <tr key={house.id} className="houseDetails">
                 <td className="houseId">{house.id}</td>

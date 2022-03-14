@@ -12,9 +12,8 @@ function App() {
   return (
     <div className="App">
       < AddHouse setHouses = {setHouses} />
-      {houses.map((house)=>{
-        return <Rentals house = {house} key = {house.id} />
-      })}
+      
+      <Rentals houses = {houses} />
     </div>
   );
 }
