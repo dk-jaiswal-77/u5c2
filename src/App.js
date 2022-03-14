@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       < AddHouse setHouses = {setHouses} />
       
-      <Rentals houses = {houses} />
+      <Rentals houses = {houses} updateHouses = {(arr)=>{setHouses(arr)}} />
     </div>
   );
 }

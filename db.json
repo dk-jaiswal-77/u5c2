@@ -1,52 +1,28 @@
 {
   "houses": [
     {
-      "name": "dhru",
-      "ownerName": "dhirendra",
-      "address": "fjasl",
-      "areaCode": "1234",
-      "rent": "23423",
-      "preferredTenant": "bachelor",
-      "bachelor": true,
-      "married": false,
-      "image": "arfdaf",
-      "id": 1
-    },
-    {
-      "name": "fasfasf",
-      "ownerName": "asfasf",
-      "address": "asfa",
-      "areaCode": "fasfda",
-      "rent": "fasf",
-      "preferredTenant": "bachelor",
-      "bachelor": true,
-      "married": false,
-      "image": "fasfda",
+      "name": "patel bhawan",
+      "ownerName": "prakash patel",
+      "address": "birgunj",
+      "areaCode": "400058",
+      "rent": "12000",
+      "preferredTenant": "married",
+      "bachelor": false,
+      "married": true,
+      "image": "image1",
       "id": 2
     },
     {
-      "name": "fsdf",
-      "ownerName": "fasd",
-      "address": "f",
-      "areaCode": "dasf",
-      "rent": "fasdf",
-      "preferredTenant": "bachelor",
-      "bachelor": true,
-      "married": false,
-      "image": "fasdf",
+      "name": "jaiswal bhawan",
+      "ownerName": "dhirendra jaiswal",
+      "address": "new delhi",
+      "areaCode": "77077",
+      "rent": "40000",
+      "preferredTenant": "married",
+      "bachelor": false,
+      "married": true,
+      "image": "image 2",
       "id": 3
-    },
-    {
-      "name": "gsdf",
-      "ownerName": "fsadf",
-      "address": "fssfasdf",
-      "areaCode": "fsda",
-      "rent": "fdsa",
-      "preferredTenant": "bachelor",
-      "bachelor": true,
-      "married": false,
-      "image": "fsdaf",
-      "id": 4
     }
   ]
 }

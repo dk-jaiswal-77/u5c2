@@ -1,14 +1,58 @@
 import "./Rentals.css";
+import { useState } from "react";
 
-export const Rentals = ({houses}) => {
+export const Rentals = ({houses, updateHouses}) => {
+  
+  const new_houses = [...houses]; // important point 
+
+  function sortById()
+  {
+    new_houses.sort((a,b) => {
+      return(Number(a.id) - Number(b.id));
+    });
+    updateHouses(new_houses);
+  }
+
+  function sortByRentAsc()
+  {
+    new_houses.sort((a, b)=>{
+      return (Number(a.rent)- Number(b.rent))
+    });
+    updateHouses(new_houses);
+  }
+
+  function sortByRentDesc()
+  {
+    new_houses.sort((a, b)=>{
+      return(Number(b.rent)-Number(a.rent));
+    });
+    updateHouses(new_houses);
+  }
+
+  function sortByAreaAsc()
+  {
+    new_houses.sort((a, b)=>{
+      return(Number(a.areaCode) - Number(b.areaCode));
+    });
+    updateHouses(new_houses);
+  }
+
+  function sortByAreaDesc()
+  {
+    new_houses.sort((a, b)=>{
+      return(Number(b.areaCode) - Number(a.areaCode));
+    });
+    updateHouses(new_houses);
+  }
+
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
-        <button className="sortById">Sort by ID</button>
-        <button className="sortByRentAsc">Rent Low to high</button>
-        <button className="sortByRentDesc">Rent High to low</button>
-        <button className="sortByAreaAsc">Area Low to high</button>
-        <button className="sortByAreaDesc">Area High to Low</button>
+        <button className="sortById" onClick={sortById} >Sort by ID</button>
+        <button className="sortByRentAsc" onClick={sortByRentAsc}>Rent Low to high</button>
+        <button className="sortByRentDesc" onClick={sortByRentDesc} >Rent High to low</button>
+        <button className="sortByAreaAsc" onClick={sortByAreaAsc} >Area Low to high</button>
+        <button className="sortByAreaDesc" onClick={sortByAreaDesc} >Area High to Low</button>
       </div>
       <input
         className="searchAddress"
