@@ -1,0 +1,16 @@
+{
+  "houses": [
+    {
+      "name": "dhru",
+      "ownerName": "dhirendra",
+      "address": "fjasl",
+      "areaCode": "1234",
+      "rent": "23423",
+      "preferredTenant": "bachelor",
+      "bachelor": true,
+      "married": false,
+      "image": "arfdaf",
+      "id": 1
+    }
+  ]
+}

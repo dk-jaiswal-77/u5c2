@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { AddHouse } from './Components/AddHouse/AddHouse';
+import {useState} from "react";
+import { Rentals } from './Components/Rentals/Rentals';
 
 function App() {
+
+  const [houses, setHouses] = useState([]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      < AddHouse setHouses = {setHouses} />
+      {houses.map((house)=>{
+        return <Rentals house = {house} key = {house.id} />
+      })}
     </div>
   );
 }
