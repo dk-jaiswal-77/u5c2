@@ -29,7 +29,7 @@ export const Rentals = ({houses}) => {
           </tr>
         </thead>
         <tbody>
-          {houses.map((house, index) => {
+          {houses.map((house) => {
             return (
               <tr key={house.id} className="houseDetails">
                 <td className="houseId">{house.id}</td>
@@ -39,7 +39,7 @@ export const Rentals = ({houses}) => {
                 <td className="areaCode">{house.areaCode}</td>
                 <td className="rent">{house.rent}</td>
                 <td className="preferredTenants">
-                  {/* Show text Both or Bachelors or Married based on values */}
+                  {house.preferredTenant}
                 </td>
                 <td className="houseImage">
                   <img src={house.image} alt="house" />
