@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const Rentals = ({houses, updateHouses}) => {
   
-  const new_houses = [...houses]; // important point 
+  let new_houses = [...houses]; // important point 
 
   function sortById()
   {
@@ -60,26 +60,27 @@ export const Rentals = ({houses, updateHouses}) => {
         className="searchAddress"
         type="text"
         placeholder="Search Address" 
-        onChange={(event_obj)=>{
+        onChange={({target})=>{
+          let value = target.value;
           if(timeout_id === null)
           {
-              timeout_id = setTimeout((event_obj)=>{
-              let filtered_houses = new_houses.filter((house)=>{
+              timeout_id = setTimeout((value)=>{
+              new_houses = new_houses.filter((house)=>{
                 let address = house.address;
-                return(address.includes(e.target.value));
+                return(address.includes(value));
               });
-              updateHouses(filtered_houses);
+              updateHouses(new_houses);
             }, 800);
           }
           else
           {
             clearTimeout(timeout_id);
-            timeout_id = setTimeout((event_obj)=>{
-              let filtered_houses = new_houses.filter((house)=>{
+            timeout_id = setTimeout((value)=>{
+              new_houses = new_houses.filter((house)=>{
                 let address = house.address;
-                return(address.includes(e.target.value));
+                return(address.includes(value));
               });
-              updateHouses(filtered_houses);
+              updateHouses(new_houses);
             }, 800);
           }
         }}
