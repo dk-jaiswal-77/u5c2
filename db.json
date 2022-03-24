@@ -23,6 +23,30 @@
       "married": true,
       "image": "image 2",
       "id": 3
+    },
+    {
+      "name": "sanon niwas",
+      "ownerName": "kriti sanon",
+      "address": "new delhi",
+      "areaCode": "999099",
+      "rent": "89238",
+      "preferredTenant": "married",
+      "bachelor": false,
+      "married": true,
+      "image": "image 3",
+      "id": 4
+    },
+    {
+      "name": "d1",
+      "ownerName": "d2",
+      "address": "kolkata",
+      "areaCode": "1234",
+      "rent": "5000",
+      "preferredTenant": "bachelor",
+      "bachelor": true,
+      "married": false,
+      "image": "image6",
+      "id": 5
     }
   ]
 }

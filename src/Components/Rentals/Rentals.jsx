@@ -45,6 +45,8 @@ export const Rentals = ({houses, updateHouses}) => {
     updateHouses(new_houses);
   }
 
+  let timeout_id = null;
+
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
@@ -57,7 +59,30 @@ export const Rentals = ({houses, updateHouses}) => {
       <input
         className="searchAddress"
         type="text"
-        placeholder="Search Address"
+        placeholder="Search Address" 
+        onChange={(event_obj)=>{
+          if(timeout_id === null)
+          {
+              timeout_id = setTimeout((event_obj)=>{
+              let filtered_houses = new_houses.filter((house)=>{
+                let address = house.address;
+                return(address.includes(e.target.value));
+              });
+              updateHouses(filtered_houses);
+            }, 800);
+          }
+          else
+          {
+            clearTimeout(timeout_id);
+            timeout_id = setTimeout((event_obj)=>{
+              let filtered_houses = new_houses.filter((house)=>{
+                let address = house.address;
+                return(address.includes(e.target.value));
+              });
+              updateHouses(filtered_houses);
+            }, 800);
+          }
+        }}
       />
       <table className="table" border="1">
         <thead>

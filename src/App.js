@@ -8,6 +8,8 @@ function App() {
 
   const [houses, setHouses] = useState([]);
 
+  const [state, setState] = useState(true);
+
   async function getHouses(){
     const res = await fetch("http://localhost:8080/houses", {
       method : "GET"
@@ -22,9 +24,13 @@ function App() {
 
   return (
     <div className="App">
-      < AddHouse setHouses = {setHouses} />
-      
-      <Rentals houses = {houses} updateHouses = {(arr)=>{setHouses(arr)}} />
+
+      <button className="toggleForm" onClick={()=>{
+        setState(!state);
+      }}>Toggle</button>
+
+      {(state === true) ? <Rentals houses = {houses} updateHouses = {(arr)=>{setHouses(arr)}} /> : < AddHouse setHouses = {setHouses} /> }
+
     </div>
   );
 }
